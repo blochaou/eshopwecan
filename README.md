@@ -1,5 +1,6 @@
 # eshopwecan
-E-commerce avec des produits Amazon prêts à vendre
+E-commerce avec des produits Amazon prêts à vendre  
+Site officiel : [http://www.eshopwecan.com](http://www.eshopwecan.com)
 ##Objectifs
 1. S'initer au e-commerce avant de s'engager dans un grand projet en ligne
 2. Vendre en ligne sans gérer les stocks , la livraison et les retours
