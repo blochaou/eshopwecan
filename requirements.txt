@@ -1,0 +1,11 @@
+Django==1.10
+django-settings-export
+Pillow
+pytz
+bottlenose
+lxml
+python-dateutil
+python-amazon-simple-product-api
+django-stdimage
+django-haystack==2.5.0
+pysolr==3.5.0
