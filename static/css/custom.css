@@ -1,0 +1,32 @@
+/* Theme Name: The Project - Responsive Website Template
+Author:HtmlCoder
+Author URI:http://www.htmlcoder.me
+Author e-mail:htmlcoder.me@gmail.com
+Version:1.1.0
+Created:December 2014
+License URI:http://support.wrapbootstrap.com/
+File Description: Place here your custom CSS styles
+*/
+.cat-image{
+    max-height: 380px;
+    max-width: 380px;
+}
+
+.height-text{
+    min-height: 40px!important;
+    max-height: 40px!important;
+    height:40px!important;
+}
+.overlay-height{
+    min-height: 150px;
+    max-height: 150px;
+    height: 150px;
+}
+.loader{
+    display: none;
+}
+
+.error-style{
+    color: red;
+    font-weight: bold;
+}
