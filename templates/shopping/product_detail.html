@@ -1,0 +1,167 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+{% block robotsblock %}index,follow{% endblock %}
+{% block title %} {{ product.name }} moins cher en ligne ({{ product.categorie.name }}) {% endblock %}
+{% block description %} {{ product.name }} moins cher en ligne. Promo {{ product.name }} ({{ product.categorie.name }}) dans les magasins en ligne {% endblock %}
+{% block keywordsblock %}{{ product.name }},promo {{ product.name }}, {{ product.categorie.name }}{% endblock %}
+
+{% block content %}
+<input type="hidden" id="product_asin" name="product_asin" value="{{ product.amazon_asin }}">
+<input type="hidden" id="amazon_index" name="product_asin" value="{{ product.amazon_index }}">
+<input type="hidden" id="amazon_nodeid" name="product_asin" value="{{ product.categorie.amazon_nodeid }}">
+
+ <!-- breadcrumb start -->
+			<!-- ================ -->
+			<div class="breadcrumb-container">
+				<div class="container">
+					<ol class="breadcrumb">
+						<li><i class="fa fa-home pr-10"></i><a href="/">{{ settings.EWC_APP_NAME }}</a></li>
+                        <li><a href="{{ product.categorie.get_absolute_url }}">{{ product.categorie.name }}</a></li>
+                        {% if product.name %}
+						<li class="active">{{ product.name }}</li>
+                        {% else %}
+                        <li class="active">{{ product.amazon_title }}</li>
+                        {% endif %}
+					</ol>
+				</div>
+			</div>
+			<!-- breadcrumb end -->
+
+			<!-- main-container start -->
+			<!-- ================ -->
+			<section class="main-container">
+
+				<div class="container">
+					<div class="row">
+
+						<!-- main start -->
+						<!-- ================ -->
+						<div class="main col-md-12">
+
+							<!-- page-title start -->
+							<!-- ================ -->
+							<h1 class="page-title">{{ product.name }}</h1>
+							<div class="separator-2"></div>
+                         <div>
+                                        {{ product.desc }}
+                                    </div>
+							<!-- page-title end -->
+
+							<div class="row">
+								<div class="col-md-4">
+									<!-- pills start -->
+									<!-- ================ -->
+									<!-- Nav tabs -->
+									<ul class="nav nav-pills" role="tablist">
+										<li class="active"><a href="#pill-1" role="tab" data-toggle="tab" title="images"><i class="fa fa-camera pr-5"></i> Image</a></li>
+										</ul>
+									<!-- Tab panes -->
+									<div class="tab-content clear-style">
+										<div class="tab-pane active" id="pill-1">
+											<div class="owl-carousel content-slider-with-large-controls">
+
+
+												<div class="overlay-container overlay-visible">
+													<img src="{{ product.amazon_large_image_url }}" alt="{{ product.name }}">
+													<a href="{{ product.amazon_large_image_url }}" class="popup-img overlay-link" title="{{ product.name }}"><i class="icon-plus-1"></i></a>
+												</div>
+
+
+											</div>
+										</div>
+
+									</div>
+									<!-- pills end -->
+								</div>
+								<div class="col-md-8 pv-30">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                       <div class="fb-like" data-href="{{ product.get_absolute_url }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a class="twitter-share-button"
+                                              href="{{ product.get_absolute_url }}">
+                                            Tweet</a>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="g-plusone" data-size="medium"></div>
+                                    </div>
+                                </div>
+
+                                    {% include 'shared/ads-adaptable.html' %}
+									<h2>Description</h2>
+
+                                {% autoescape off %}
+
+                                    {{ product.amazon_feature}}
+                                {% endautoescape %}
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h2>Marque</h2>
+                                    {{ product.amazon_brand }}
+
+                                    </div>
+                                    <div class="col-md-4">
+                                    {% if product.amazon_manufacturer %}
+                                    <h2>Fabricant</h2>
+                                    {{ product.amazon_manufacturer }}
+                                    {% endif %}
+                                    </div>
+                                </div>
+
+
+									<hr class="mb-10">
+
+                                    <div id="price_block">
+
+                                    </div>
+
+
+								</div>
+							</div>
+						</div>
+						<!-- main end -->
+
+					</div>
+				</div>
+			</section>
+			<!-- main-container end -->
+
+			<!-- section start -->
+			<!-- ================ -->
+			<section class="pv-30 light-gray-bg">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-9">
+                        <h2>Produits similaires <b>{{ product.name }}</b></h2>
+                             {% include 'shared/ads-adaptable.html' %}
+                              <div class="row masonry-grid-fitrows grid-space-10">
+                                {% for p in products %}
+                                    <div class="col-md-4 col-sm-6 masonry-grid-item">
+                                    {% include 'shared/product_detail_vertical.html' %}
+                                    </div>
+
+
+                                {% endfor %}
+                            </div>
+                        <div id="similar_block">
+
+                        </div>
+						</div>
+
+						<!-- sidebar start -->
+						<!-- ================ -->
+                            <aside id="cata_block" class="col-md-3 col-lg-3">
+
+                            </aside>
+						<!-- sidebar end -->
+
+					</div>
+				</div>
+			</section>
+			<!-- section end -->
+
+{% endblock %}
+{% block javascripts %}
+     <script type="text/javascript" src="{% static 'js/price_loading.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,4 @@
+{{ object.name }}
+{{ object.amazon_title}}
+{{ object.amazon_feature}}
+{{ object.desc }}

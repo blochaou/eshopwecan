@@ -1,0 +1,52 @@
+ <div class="listing-item mb-20">
+        <div class="row grid-space-0">
+            <div class="col-sm-6 col-md-4 col-lg-3 text-center">
+                <div class="overlay-container text-center">
+                    <img src="{{ p.amazon_medium_image_url }}" alt="{{ p.amazon_title }}">
+                    {% if p.name %}
+                    <a class="overlay-link" href="{{ p.get_absolute_url }}"><i class="fa fa-plus"></i></a>
+                        {% else %}
+                        <a rel="nofollow" class="overlay-link" href="{{ p.get_absolute_url }}"><i class="fa fa-plus"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-8 col-lg-9">
+                <div class="body">
+                    {% if p.name %}
+                    <h3 class="margin-clear"><a href="{{ p.get_absolute_url }}">{{ p.amazon_title }}</a></h3>
+                        {% else %}
+                        <h3 rel="nofollow" class="margin-clear"><a href="{{ p.get_absolute_url }}">{{ p.amazon_title }}</a></h3>
+                {% endif %}
+                    {% autoescape off %}
+                    <p>{{ p.amazon_feature|truncatechars_html:300 }}</p>
+                    {% endautoescape %}
+                    <div class="elements-list clearfix">
+                    {% if user.is_authenticated and user.username == settings.EWC_ADMIN_USERNAME %}
+
+
+                        <span class="price">{{ p.amazon_price|first }}€</span>
+                         {% if p.uuid %}
+                            <a rel="nofollow" target="_blank" href="#" class="pull-right margin-clear btn btn-sm btn-success btn-animated">Added<i class="fa fa-thumbs-up"></i></a>
+
+                        {% else %}
+                             {% include 'shared/add_link.html' %}
+
+                        {% endif %}
+
+                    {% else %}
+
+                         {% if p.amazon_price and p.amazon_price is not None %}
+                        <span class="price">{{ p.amazon_price|first }}€</span>
+                        <a href="/buy-products/{{ p.amazon_asin }}" class="pull-right btn btn-sm btn-default-transparent btn-animated">Détail<i class="fa fa-shopping-cart"></i></a>
+                        {% else %}
+                                <a href="/buy-products/{{ p.amazon_asin }}" class="pull-right btn btn-sm btn-default-transparent btn-animated">Détail<i class="fa fa-shopping-cart"></i></a>
+
+                        {% endif %}
+                    {% endif %}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,60 @@
+
+    <div class="listing-item white-bg bordered mb-20">
+        <div class="overlay-container overlay-height">
+            {% if p.amazon_medium_image_url %}
+            <img src="{{ p.amazon_medium_image_url }}" alt="{{ p.amazon_title }}">
+                {% else %}
+                <img src="{{ p.amazon_large_image_url }}" alt="{{ p.amazon_title }}">
+            {% endif %}
+            <a rel="nofollow" class="overlay-link popup-img-single" href="{{ p.amazon_large_image_url }}"><i class="fa fa-search-plus"></i></a>
+
+
+        </div>
+        <div class="body">
+            {% if p.name %}
+                <h3 class="height-text"><a href="{{ p.get_absolute_url }}">{{ p.amazon_title |truncatechars:45 }}</a></h3>
+            {% else %}
+                <h3 class="height-text"><a rel="nofollow" href="{{ p.get_absolute_url }}">{{ p.amazon_title |truncatechars:45 }}</a></h3>
+            {% endif %}
+
+            <p class="small height-text">{% autoescape off %} {{ p.amazon_feature|truncatechars_html:75 }}{% endautoescape %}</p>
+            {% if user.is_authenticated and user.username == settings.EWC_ADMIN_USERNAME %}
+                <div class="elements-list clearfix">
+
+                {% if p.amazon_price and p.amazon_price.0 is not None %}
+                    <span class="price">{{ p.amazon_price|first }}€</span>
+
+                    {% if p.uuid %}
+                            <a rel="nofollow" target="_blank" href="#" class="pull-right margin-clear btn btn-sm btn-success btn-animated">Added<i class="fa fa-thumbs-up"></i></a>
+
+                    {% else %}
+                         {% include 'shared/add_link.html' %}
+
+                    {% endif %}
+                {% else %}
+                  <span class="price"></span>
+                   {% if p.uuid %}
+                            <a rel="nofollow" target="_blank" href="#" class="pull-right margin-clear btn btn-sm btn-success btn-animated">Added<i class="fa fa-thumbs-up"></i></a>
+
+                    {% else %}
+                         {% include 'shared/add_link.html' %}
+
+                    {% endif %}
+                  {% endif %}
+            </div>
+                {% else %}
+                 <div class="elements-list clearfix">
+                {% if p.amazon_price and p.amazon_price.0 is not None %}
+                <span class="price">{{ p.amazon_price|first }}€</span>
+
+                <a rel="nofollow" target="_blank" href="/buy-products/{{ p.amazon_asin }}" class="pull-right margin-clear btn btn-sm btn-default-transparent btn-animated">Détail<i class="fa fa-shopping-cart"></i></a>
+                {% else %}
+                  <span class="price"></span>
+                  <a rel="nofollow" target="_blank" href="/buy-products/{{ p.amazon_asin }}" class="pull-right margin-clear btn btn-sm btn-default-transparent btn-animated">Détail<i class="fa fa-shopping-cart"></i></a>
+
+                {% endif %}
+            </div>
+            {% endif %}
+
+        </div>
+    </div>

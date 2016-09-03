@@ -1,0 +1,12 @@
+	<div class="light-gray-bg p-20 bordered clearfix">
+        {% if amazon_product.price_and_currency and amazon_product.price_and_currency is not None and amazon_product.price_and_currency.0 is not None %}
+        <span class="product price"><i class="icon-tag pr-10"></i>{{ amazon_product.price_and_currency|first }}€</span>
+        <div class="product elements-list pull-right clearfix">
+            <a href="/buy-products/{{ amazon_product.asin }}" class="margin-clear btn btn-default">Acheter</a>
+        </div>
+        {% else %}
+            <div class="product elements-list pull-right clearfix">
+            <a href="/buy-products/{{ amazon_product.asin }}" class="margin-clear btn btn-default">Voir détail</a>
+        </div>
+        {% endif %}
+    </div>

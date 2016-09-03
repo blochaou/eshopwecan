@@ -1,0 +1,64 @@
+<div class="block clearfix">
+    <form role="search" action="/search" method="get">
+        {% csrf_token %}
+        <div class="form-group has-feedback">
+            <div class="row">
+                <div class="col-md-4">
+                    <select name="amazon_index" class="form-control">
+
+                        <option {% if categorie.amazon_index == 'PetSupplies' %}selected{% endif %}  value="PetSupplies">Animalerie</option>
+
+                        <option {% if categorie.amazon_index == 'Automotive' %}selected{% endif %}  value="Automotive">Auto Moto</option>
+
+                        <option {% if categorie.amazon_index == 'Luggage' %}selected{% endif %}  value="Luggage">Bagages</option>
+
+                        <option {% if categorie.amazon_index == 'Baby' %}selected{% endif %}  value="Baby">Bébé et Puériculture</option>
+
+                        <option {% if categorie.amazon_index == 'Beauty' %}selected{% endif %}  value="Beauty">Beauté et Parfum</option>
+
+                        <option {% if categorie.amazon_index == 'Jewelry' %}selected{% endif %}  value="Jewelry">Bijoux</option>
+
+                        <option {% if categorie.amazon_index == 'HomeImprovement' %}selected{% endif %}  value="HomeImprovement">Bricolage</option>
+
+                        <option {% if categorie.amazon_index == 'Shoes' %}selected{% endif %}  value="Shoes">Chaussures et sacs</option>
+
+                        <option {% if categorie.amazon_index == 'Kitchen' %}selected{% endif %}  value="Kitchen">Cuisine et Maison</option>
+
+                        <option {% if categorie.amazon_index == 'Grocery' %}selected{% endif %}  value="Grocery">Epicerie</option>
+
+                        <option {% if categorie.amazon_index == 'HealthPersonalCare' %}selected{% endif %}  value="HealthPersonalCare">Hygiène et Santé</option>
+
+                        <option {% if categorie.amazon_index == 'Books' %}selected{% endif %}  value="Books">Livres en Français</option>
+
+                        <option {% if categorie.amazon_index == 'ForeignBooks' %}selected{% endif %}  value="ForeignBooks">Livres en Anglais</option>
+
+                        <option {% if categorie.amazon_index == 'Lighting' %}selected{% endif %}  value="Lighting">Lumière et Eclairage</option>
+
+                        <option {% if categorie.amazon_index == 'OfficeProducts' %}selected{% endif %}  value="OfficeProducts">Fourniture de bureau</option>
+
+                        <option {% if categorie.amazon_index == 'Electronics' %}selected{% endif %}  value="Electronics">Multimédia et Informatique</option>
+
+                        <option {% if categorie.amazon_index == 'MusicalInstruments' %}selected{% endif %}  value="MusicalInstruments">Instruments de musique</option>
+
+                        <option {% if categorie.amazon_index == 'Toys' %}selected{% endif %}  value="Toys">Jeux et Jouets</option>
+
+                        <option {% if categorie.amazon_index == 'VideoGames' %}selected{% endif %}  value="VideoGames">Jeux Vidéo</option>
+
+                        <option {% if categorie.amazon_index == 'Watches' %}selected{% endif %}  value="Watches">Montres</option>
+
+                        <option {% if categorie.amazon_index == 'SportingGoods' %}selected{% endif %}  value="SportingGoods">Sports et Loisirs</option>
+
+                        <option {% if categorie.amazon_index == 'Apparel' %}selected{% endif %}  value="Apparel">Vêtements et accessoires</option>
+
+                    </select>
+                </div>
+                 <div class="col-md-8">
+                   <input type="text" class="form-control" required name="text_search" value="{{ text_search }}" placeholder="Rechercher un article en ligne">
+                </div>
+
+            </div>
+
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,57 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+{% block title %}Produits de la catégories {{ categorie.name }}{% endblock %}
+{% block content %}
+
+    <section class="section light-gray-bg clearfix">
+				<div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {% if topCategorie.id != categorie.id %}
+                                <h1>{{ topCategorie.name }} / {{ categorie.name }} en ligne</h1>
+                                {% else %}
+                                <h1> {{ categorie.name }} en ligne</h1>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            {% include 'shared/search_form.html' %}
+                        </div>
+                    </div>
+					<div class="row">
+                        <div class="col-md-3">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="/toutes-les-categories">Toutes les catégories</a></li>
+                                {% if topCategorie.id != categorie.id %}
+                                <li class="list-group-item"><a rel="nofollow" href="{{ topCategorie.get_absolute_url }}">{{ topCategorie.name }}</a></li>
+                                {% endif %}
+
+                                <li class="list-group-item"><a rel="nofollow" href="{{ categorie.get_absolute_url }}">{{ categorie.name }}</a></li>
+                                {% for cat in categories %}
+                                    <li class="list-group-item"><a rel="nofollow" href="{{ cat.get_absolute_url }}">{{ cat.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-md-9">
+                            {% include 'shared/ads-adaptable.html' %}
+                            {% include 'shared/pagination.html' %}
+                            {% include 'shared/ads-thematique.html' %}
+                            <div class="row masonry-grid-fitrows grid-space-10">
+                                {% for p in products %}
+
+                                    <div class="col-md-4 col-sm-6 masonry-grid-item">
+                                    {% include 'shared/product_detail_vertical.html' %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                          {% include 'shared/ads-thematique.html' %}
+                        {% include 'shared/pagination.html' %}
+
+                        {% include 'shared/ads-adaptable.html' %}
+                        </div>
+                    </div>
+                    </div>
+    </section>
+{% endblock %}

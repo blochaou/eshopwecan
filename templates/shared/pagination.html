@@ -1,0 +1,17 @@
+	<!-- pagination start -->
+    {% if next_page %}
+        <nav class="text-center">
+            <ul class="pagination">
+                <li><a rel="nofollow" href="{{ pageurl }}{{ previous_page }}" aria-label="Previous"><i class="fa fa-angle-left"></i></a></li>
+                {% for i in pages%}
+                    {% if i == current_page %}
+                    <li class="active"><a rel="nofollow" href="{{ pageurl }}{{ i }}">{{ i }}</a></li>
+                    {% else %}
+                        <li ><a rel="nofollow" href="{{ pageurl }}{{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                <li><a rel="nofollow" href="{{ pageurl }}{{ next_page }}" aria-label="Next"><i class="fa fa-angle-right"></i></a></li>
+            </ul>
+        </nav>
+    {% endif %}
+        <!-- pagination end -->

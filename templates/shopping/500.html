@@ -1,0 +1,24 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+{% block title %}Page introuvable{% endblock %}
+{% block content %}
+<section class="main-container jumbotron light-gray-bg text-center margin-clear">
+
+				<div class="container">
+					<div class="row">
+
+						<!-- main start -->
+						<!-- ================ -->
+						<div class="main col-md-6 col-md-offset-3 pv-40">
+							<h1 class="page-title"><span class="text-default">500</span></h1>
+							<h2>Ooops! Une erreur s'est produite</h2>
+							<p>Désolé ! Vous pouvez réessayer ou rechercher un autre article ou naviguer vers l'accueuil en cliquant sur le bouton ci-dessus. Merci </p>
+							{% include 'shared/search_form.html' %}
+							<a href="/" class="btn btn-default btn-animated btn-lg">Retrour à l'accueil <i class="fa fa-home"></i></a>
+						</div>
+						<!-- main end -->
+
+					</div>
+				</div>
+			</section>
+{% endblock %}

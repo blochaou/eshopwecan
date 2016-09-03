@@ -1,0 +1,13 @@
+{% if products %}
+<h2>Produits en promo de la même famille qui peuvent vous intéresser</h2>
+     {% include 'shared/ads-adaptable.html' %}
+      <div class="row masonry-grid-fitrows grid-space-10 mb-20">
+        {% for p in products %}
+            {% if forloop.counter < 4 %}
+            <div class="col-md-4 col-sm-6 masonry-grid-item">
+            {% include 'shared/product_detail_vertical.html' %}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

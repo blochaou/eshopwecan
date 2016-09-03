@@ -1,0 +1,314 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+{% block title %}{{ settings.EWC_APP_NAME }} Achetez les produits moins cher en ligne{% endblock %}
+{% block description %}Le24Avril pour un achat malin en ligne. Achetez les produits en promo sur Le24Avril.com .Ne rstez plus les alertes promos et les nouveautés.{% endblock %}
+{% block robotsblock %}index,follow{% endblock %}
+{% block keywordsblock %}e-commerce,vente en ligne, achat en ligne, moins cher en ligne{% endblock %}
+{% block content %}
+    <!-- banner start -->
+			<!-- ================ -->
+			<div class="banner clearfix">
+
+				<!-- slideshow start -->
+				<!-- ================ -->
+				<div class="slideshow">
+
+					<!-- slider revolution start -->
+					<!-- ================ -->
+					<div class="slider-banner-container">
+						<div class="slider-banner-fullwidth-big-height">
+							<ul class="slides">
+								<!-- slide 1 start -->
+								<!-- ================ -->
+								<li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="Suivant">
+
+								<!-- main image -->
+								<img src="{% static 'images/bg7.jpg' %}" alt="slidebg1" data-bgposition="center top"  data-bgrepeat="no-repeat" data-bgfit="cover">
+
+								<!-- Transparent Background -->
+								<div class="tp-caption dark-translucent-bg"
+									data-x="center"
+									data-y="bottom"
+									data-speed="600"
+									data-start="0">
+								</div>
+
+								<!-- LAYER NR. 1 -->
+								<div class="tp-caption sfb fadeout large_white"
+									data-x="left"
+									data-y="180"
+									data-speed="500"
+									data-start="1000"
+									data-easing="easeOutQuad">La   <span class="text-default">rentrée des classes</span> 2016 <br> Et vous prêt pour la rentrée des classe 2016 ?
+								</div>
+
+								<!-- LAYER NR. 2 -->
+								<div class="tp-caption sfb fadeout large_white tp-resizeme hidden-xs"
+									data-x="left"
+									data-y="300"
+									data-speed="500"
+									data-start="1300"
+									data-easing="easeOutQuad"><div class="separator-2 light"></div>
+								</div>
+
+								<!-- LAYER NR. 3 -->
+								<div class="tp-caption sfb fadeout medium_white hidden-xs"
+									data-x="left"
+									data-y="320"
+									data-speed="500"
+									data-start="1300"
+									data-easing="easeOutQuad"
+									data-endspeed="600">Faites votre rentrée des classes sans vous ruiner. <br> Acheter les fournitures scolaires en ligne à petit prix. <br> Cartable , calculatrice , cahier , agenda , stylo...
+								</div>
+
+								<!-- LAYER NR. 4 -->
+								<div class="tp-caption sfb fadeout small_white text-center"
+									data-x="left"
+									data-y="430"
+									data-speed="500"
+									data-start="1600"
+									data-easing="easeOutQuad"
+									data-endspeed="600"><a href="/categories/OfficeProducts/197763031/fournitures-decole" class="btn btn-default btn-animated">Fourniture scolaire <i class="fa fa-arrow-right"></i></a>
+								</div>
+
+								</li>
+								<!-- slide 1 end -->
+
+								<!-- slide 2 start -->
+								<!-- ================ -->
+								<li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="Suivant">
+
+								<!-- main image -->
+								<img src="{% static 'images/bg6.jpg' %}" alt="slidebg1" data-bgposition="center top"  data-bgrepeat="no-repeat" data-bgfit="cover">
+
+								<!-- Transparent Background -->
+								<div class="tp-caption dark-translucent-bg"
+									data-x="center"
+									data-y="bottom"
+									data-speed="600"
+									data-start="0">
+								</div>
+
+								<!-- LAYER NR. 1 -->
+								<div class="tp-caption sfb fadeout text-right large_white"
+									data-x="right"
+									data-y="180"
+									data-speed="500"
+									data-start="1000"
+									data-easing="easeOutQuad"><span class="text-default">Cartables moins cher</span> en ligne<br> Rechercher le cartable de votre enfant
+								</div>
+
+								<!-- LAYER NR. 2 -->
+								<div class="tp-caption sfb fadeout large_white tp-resizeme hidden-xs"
+									data-x="right"
+									data-y="300"
+									data-speed="500"
+									data-start="1300"
+									data-easing="easeOutQuad"><div class="separator-3 light"></div>
+								</div>
+
+								<!-- LAYER NR. 3 -->
+								<div class="tp-caption sfb fadeout medium_white text-right hidden-xs"
+									data-x="right"
+									data-y="320"
+									data-speed="500"
+									data-start="1300"
+									data-easing="easeOutQuad"
+									data-endspeed="600">Des cartables de toutes les marques en ligne. <br> Cartables 1 , 2 ou 3 compartiments <br> Sacs à dos , cartables , Sets de sacs scolaires...
+								</div>
+
+								<!-- LAYER NR. 4 -->
+								<div class="tp-caption sfb fadeout small_white text-right text-center"
+									data-x="right"
+									data-y="430"
+									data-speed="500"
+									data-start="1600"
+									data-easing="easeOutQuad"
+									data-endspeed="600"><a href="/categories/Luggage/363710031/cartables-et-sacs-a-dos" class="btn btn-default btn-animated">Cartables <i class="fa fa-arrow-right"></i></a>
+								</div>
+								</li>
+								<!-- slide 2 end -->
+							</ul>
+							<div class="tp-bannertimer"></div>
+						</div>
+					</div>
+					<!-- slider revolution end -->
+
+				</div>
+				<!-- slideshow end -->
+
+			</div>
+			<!-- banner end -->
+
+			<div id="page-start"></div>
+
+
+			<!-- section start -->
+			<!-- ================ -->
+			<section class="section light-gray-bg clearfix">
+				<div class="container">
+                  <div class="row">
+                        <div class="col-md-12">
+                            <h2>Rechercher un produit en ligne</h2>
+                            {% include 'shared/search_form.html' %}
+                        </div>
+                    </div>
+					<div class="row">
+						<div class="col-md-12">
+							<!-- pills start -->
+							<!-- ================ -->
+							<!-- Nav tabs -->
+							<ul class="nav nav-pills" role="tablist">
+								<li class="active"><a href="#pill-1" role="tab" data-toggle="tab" title="Latest Arrivals"><i class="icon-star"></i> Une suggestion de produits</a></li>
+
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content clear-style">
+								<div class="tab-pane active" id="pill-1">
+									<div class="row masonry-grid-fitrows grid-space-10">
+                                        {% for p in products %}
+                                            <div class="col-md-3 col-sm-6 masonry-grid-item">
+                                            {% include 'shared/product_detail_vertical.html' %}
+                                            </div>
+                                        {% endfor %}
+
+									</div>
+								</div>
+
+							</div>
+							<!-- pills end -->
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- section end -->
+
+			<!-- section start -->
+			<!-- ================ -->
+			<section class="section dark-translucent-bg background-img-2" style="background-position: 50% 52%;">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="call-to-action text-center">
+								<div class="row">
+									<div class="col-sm-8">
+										<h1 class="title">Ne ratez pas nos promos</h1>
+										<p>Trouvez les bonnes affaires sur notre page Spécial Promo. Toutes les promos y sont répertoriées avec des petits prix qui vous attendent. Faites détour vers la page des promos.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- section end -->
+
+			<!-- section start -->
+			<!-- ================ -->
+			<section class="section clearfix">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h3 class="logo-font">Nos marques</h3>
+							<div class="separator-2"></div>
+							<p>Les marques les plus recherchées sur {{ settings.EWC_APP_NAME }} en ce moment.</p>
+							<div class="clients-container">
+								<div class="clients">
+                                    {% for mark in marques %}
+                                        <div class="client-image object-non-visible" data-animation-effect="fadeIn" data-effect-delay="100">
+										<a href="#"><img src="{{ STATIC_URL }}/images/{{ mark.image }}" alt="{{ mark.name }}"></a>
+									</div>
+                                    {% endfor %}
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- section end -->
+
+			<!-- section start -->
+			<!-- ================ -->
+			<section class="section light-gray-bg clearfix">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							<h2 class="text-center">Quelques <strong>Categories</strong></h2>
+							<div class="separator"></div>
+							<p class="lead text-center">Veuillez cliquer sur la catégorie de votre choix pour afficher ses produits</p>
+						</div>
+					</div>
+				</div>
+				<div class="owl-carousel carousel-autoplay pl-10 pr-10">
+
+                    {% for cat in categories %}
+                        <div class="listing-item pl-10 pr-10 mb-20">
+						<div class="overlay-container bordered overlay-visible">
+							<img class="cat-image" src="{{ STATIC_URL }}/images/{{  cat.image.thumbnail.url }}" alt="{{ cat.name }}" alt="{{ cat.name }}">
+							<a class="overlay-link" href="{{ cat.get_absolute_url }}"><i class="fa fa-plus"></i></a>
+							<div class="overlay-bottom">
+								<div class="text">
+									<h3 class="title">{{ cat.name }}</h3>
+									<div class="separator light"></div>
+									<p class="small margin-clear"><em>{{ cat.desc }}</em></p>
+								</div>
+							</div>
+						</div>
+					</div>
+                    {% endfor %}
+
+
+				</div>
+			</section>
+			<!-- section end -->
+
+			<!-- section start -->
+			<!-- ================ -->
+			<section class="section dark-translucent-bg pv-40" style="background-image:url('images/shop-banner.jpg');background-position: 50% 32%;">
+				<div class="container">
+					<div class="row grid-space-10">
+						<div class="col-md-3 col-sm-6">
+							<div class="pv-30 ph-20 feature-box text-center object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
+								<span class="icon default-bg"><i class="fa fa-diamond"></i></span>
+								<h3>Service de qualité</h3>
+								<div class="separator clearfix"></div>
+								<p>Affichage de produit et son prix avec image de grande qualité.</p>
+								<a href="#" class="link-dark">Plus de détails<i class="pl-5 fa fa-angle-double-right"></i></a>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<div class="pv-30 ph-20 feature-box text-center object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="150">
+								<span class="icon default-bg"><i class="icon-lock"></i></span>
+								<h3>Payement sécurisé</h3>
+								<div class="separator clearfix"></div>
+								<p>Payer en toute sécurité sur {{ settings.EWC_APP_NAME }} avec votre carte de crédit</p>
+								<a href="#" class="link-dark">Read More<i class="pl-5 fa fa-angle-double-right"></i></a>
+							</div>
+						</div>
+						<div class="clearfix visible-sm"></div>
+						<div class="col-md-3 col-sm-6">
+							<div class="pv-30 ph-20 feature-box text-center object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="200">
+								<span class="icon default-bg"><i class="icon-globe"></i></span>
+								<h3 class="pl-10 pr-10">Livraison & Retour</h3>
+								<div class="separator clearfix"></div>
+								<p>Livraison gratuite et retour gratuit selon nos partenaires.</p>
+								<a href="#" class="link-dark">Plus de détails<i class="pl-5 fa fa-angle-double-right"></i></a>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<div class="pv-30 ph-20 feature-box text-center object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="250">
+								<span class="icon default-bg"><i class="icon-thumbs-up"></i></span>
+								<h3>Support & Assistance</h3>
+								<div class="separator clearfix"></div>
+								<p>Contactez le support 24/24 et 7jours/7 pour vous aider.</p>
+								<a href="#" class="link-dark">Plus de détails<i class="pl-5 fa fa-angle-double-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- section end -->
+
+{% endblock %}

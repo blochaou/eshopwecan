@@ -1,0 +1,33 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+{% block title %}Produits de la catégories {{ categorie.name }}{% endblock %}
+{% block content %}
+
+    <section class="section light-gray-bg clearfix">
+				<div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Toutes les catégories</h1>
+                    </div>
+                </div>
+                    <div class="row">
+                        {% for cat in categories %}
+
+						<div class="col-md-4">
+							<img class="cat-image" src="{{ STATIC_URL }}/images/{{  cat.image.thumbnail.url }}" alt="{{ cat.name }}" alt="{{ cat.name }}">
+							<a class="overlay-link" href="{{ cat.get_absolute_url }}"><i class="fa fa-plus"></i></a>
+
+								<div class="text text-center">
+									<h3 class="title">{{ cat.name }}</h3>
+									<div class="separator light"></div>
+
+								</div>
+
+
+					</div>
+                    {% endfor %}
+                    </div>
+
+                    </div>
+    </section>
+{% endblock %}

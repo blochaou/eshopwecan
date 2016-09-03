@@ -1,0 +1,97 @@
+ {% load staticfiles %}
+<div id="product-edit-form"   class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="product_title" class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-4">
+                <img id="product_image" src="" style="max-width: 400px;max-height: 400px"/>
+            </div>
+            <div class="col-md-8">
+
+                <form id="add_to_db_form" style="margin: 20px" action="/add_to_db">
+                    <div id="loading_product_form" class="loader mb-10">
+                    <img src="{% static 'images/ajax-loader.gif' %}">
+                        <span>Traitement en cours</span>
+                </div>
+                    <div id="error" class="error-style">
+
+                    </div>
+
+                    <input id="product_ama_title_form" type="hidden" name="product_ama_title_form">
+                    <input id="product_features_form" type="hidden" name="product_features_form">
+                    <input id="product_asin_form" type="hidden" name="product_asin_form"  value="">
+                    <input id="product_parent_asin_form" type="hidden" name="product_parent_asin_form" value="">
+                    <input id="product_image_large_form" type="hidden" name="product_image_large_form" value="">
+                    <input id="product_image_medium_form" type="hidden" name="product_image_medium_form" value="">
+                    <input id="product_image_small_form" type="hidden" name="product_image_small_form" value="">
+                    <input id="product_index_form" type="hidden" name="product_index_form" value="">
+                    <input id="product_categorie_id_form" type="hidden" name="product_categorie_id_form" value="">
+                    <input id="product_ean_form" type="hidden" name="product_ean_form" value="">
+                    <input id="product_sku_form" type="hidden" name="product_sku_form" value="">
+                    <input id="product_isbn_form" type="hidden" name="product_isbn_form" value="">
+                    <input id="product_mpn_form" type="hidden" name="product_mpn_form" value="">
+                    <input id="product_color_form" type="hidden" name="product_color_form" value="">
+                    <input id="product_upc_form" type="hidden" name="product_upc_form" value="">
+                    <input id="product_price_form" type="hidden" name="product_price_form" value="">
+                    <div class="form-group">
+                        <h4 style="display: inline">Titre (Marque Nom réference)  </h4>(<a target="_blank" id="product_url" href="">Lien de détail</a>)
+                        <input id="product_title_form" type="text" class="form-control" required name="product_title_form" value="">
+                    </div>
+                     <div class="form-group">
+                        <h4>Description</h4>
+                         <div class="text-justify" style="overflow: hidden;max-height: 150px"   id="product_desc">
+
+                         </div>
+                         <textarea class="form-control" name="product_desc_form" id="product_desc_form" required></textarea>
+
+
+                    </div>
+                     <div class="form-group">
+                         <div class="row">
+                             <div class="col-md-4">
+                                 <div class="form-group">
+                                     <h4>Marque</h4>
+                                     <div id="product_brand">
+
+                                     </div>
+                                     <input id="product_brand_form" type="hidden" class="form-control-lg" name="product_brand_form" value="">
+                                 </div>
+                             </div>
+                              <div class="col-md-4">
+                                 <div class="form-group">
+                                     <h4>Fabricant</h4>
+                                     <div id="product_manufacturer"></div>
+                                     <input id="product_manufacturer_form" type="hidden" class="form-control-lg" name="product_manufacturer_form" value="">
+                                 </div>
+                             </div>
+                              <div class="col-md-4">
+                                 <div class="form-group">
+                                     <h4>Label</h4>
+                                     <div id="product_label">
+
+                                     </div>
+                                     <input id="product_label_form" type="hidden" class="form-control-lg" name="product_label_form" value="">
+                                 </div>
+                             </div>
+                         </div>
+
+                    </div>
+                    <div id="product_editorial_reviews" style="max-height: 200px;overflow: hidden">
+                    <input id="product_editorial_reviews_form" value="" name="product_editorial_reviews_form" type="hidden">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default">Ajouter</button>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
